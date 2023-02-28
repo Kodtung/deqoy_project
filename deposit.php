@@ -39,28 +39,17 @@ if (isset($_POST['show'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebBank</title>
-</head>
-<body>
 <h1>Welcome! , <?php echo $user['username']; ?></h1>
 <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
 <a href="home.php"> <img src="img/logout.png" alt=""></a>
 
-<h2>withdraw</h2>
+<h2>Withdraw</h2>
 <form method="post">
   <label for="amount"></label>
   <div class="money">
     <input type="number" id="amount" name="amount" placeholder="0.00">
-    </div>
+</div>
   <div class="conmfirm">
-    <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+    <button type="submit" name="deposit" onclick="return confirm('Are you confirm your money?');">Confirm</button>
   </div>
 </form>
-</body>
-</html>
