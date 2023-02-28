@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
     $_SESSION['id'] = $row['id'];
     header("Location: home.php");
   } else {
-    echo "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+    echo '<script>alert("Username or Password is incorrect!!")</script>';
   }
 }
 // การลงทะเบียนผู้ใช้งาน

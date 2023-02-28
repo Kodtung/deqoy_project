@@ -18,7 +18,7 @@ $user = mysqli_fetch_assoc($result);
 if (isset($_POST['withdraw'])) {
   $amount = $_POST['amount'];
   if ($amount > $user['balance']) {
-    echo confirm('Are you confirm your money?');
+    echo '<script>alert("No more money in your account!")</script>';
   } else {
     $new_balance = $user['balance'] - $amount;
     $sql = "UPDATE users SET balance='$new_balance' , withdraw='$amount' WHERE id='$user_id'";
