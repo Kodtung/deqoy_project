@@ -43,7 +43,7 @@ if (isset($_POST['show'])) {
 <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
 <a href="home.php"> <img src="img/logout.png" alt=""></a>
 
-<h2>Withdraw</h2>
+<h2>Deposit</h2>
 <form method="post">
   <label for="amount"></label>
   <div class="money">

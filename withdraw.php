@@ -46,9 +46,13 @@ if (isset($_POST['show'])) {
 <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
 <a href="home.php"> <img src="img/logout.png" alt=""></a>
 
-<h2>withdraw</h2>
+<h2>Withdraw</h2>
 <form method="post">
   <label for="amount"></label>
-  <input type="number" id="amount" name="amount" placeholder="0.00">
-  <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+  <div class="money">
+    <input type="number" id="amount" name="amount" placeholder="0.00">
+</div>
+  <div class="conmfirm">
+    <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+  </div>
 </form>

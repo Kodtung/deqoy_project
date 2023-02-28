@@ -55,7 +55,7 @@ body {
     transition: background .5s;
 }
 
-.login-form input:focus{
+.money input:focus{
     background: white;
 }
 
