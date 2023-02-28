@@ -18,12 +18,13 @@ $user = mysqli_fetch_assoc($result);
 if (isset($_POST['withdraw'])) {
   $amount = $_POST['amount'];
   if ($amount > $user['balance']) {
-    echo "ยอดเงินในบัญชีไม่เพียงพอ";
+    echo confirm('Are you confirm your money?');
   } else {
     $new_balance = $user['balance'] - $amount;
-    $sql = "UPDATE users SET balance='$new_balance' WHERE id='$user_id'";
+    $sql = "UPDATE users SET balance='$new_balance' , withdraw='$amount' WHERE id='$user_id'";
     mysqli_query($conn, $sql);
     $user['balance'] = $new_balance;
+    $uses['withdraw'] = $amount;
   }
 }
 
@@ -39,25 +40,35 @@ if (isset($_POST['show'])) {
   $sql = "SELECT * FROM users";
   $result = mysqli_query($conn, $sql);
 }
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/deposit_style.scss">
+  <title>WebBank</title>
+</head>
 <body>
   <div class="container">
-  <h1>Welcome! , <?php echo $user['username']; ?></h1>
-<p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-<a href="home.php"> <img src="img/logout.png" alt="" width="50px" height="50px"></a>
-<link rel="stylesheet" href="css/withdraw_style.scss">
-
-<h2>Withdraw</h2>
-<form method="post">
-  <label for="amount"></label>
-  <div class="money">
-    <input type="number" id="amount" name="amount" placeholder="0.00">
-</div>
-  <div class="conmfirm">
-    <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
-  </div>
-</form>
+    <a href="home.php"> <img src="img/logout.png" alt="" width="50px"></a>
+    <div class="header">
+      <h1>Welcome! , <?php echo $user['username']; ?></h1>
+      <h2>Withdraw</h2>
+    </div>
+    <div class="lower"> 
+      <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
+    </div>
+    <form method="post">
+      <div class="money">
+        <input type="text" id="amount",id="deposit" name="amount",name="deposit" placeholder="0.00">
+      </div>
+      <div class="enter">
+        <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+      </div>
+    </form>
   </div>
 </body>
-
+</html>

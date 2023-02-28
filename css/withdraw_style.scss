@@ -1,8 +1,87 @@
-@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Labrada&display=swap");
+
 
 *{
-    font-family: 'Gloock', serif;
+    box-sizing: border-box;
 }
-body{
-    background: linear-gradient();
+
+body {
+    font-family: 'Labrada', serif;
+    min-height: 100vh;
+    background: linear-gradient(to top, #00ffdd ,#00e1ff, #c7fdff ,#83f7ff ,#00fffff1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.699);
+    padding: 3rem;
+    border-radius: 10px;
+    display: table-column;
+}
+
+.header{
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lower{
+    text-align: left;
+    font-size: 24px;
+    color: #696969;
+    padding-left: 20px;
+}
+
+img{
+    margin-left: 470px;
+}
+
+.money{
+    padding-top: 20px;
+}
+
+.money input{
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, .3);
+    padding: 20px 250px;
+    padding-left: calc(2rem * 1.5);
+    border-radius: 100px;
+    width: 90%;
+    transition: background .5s;
+    align-items: center;
+    font-size: 26px;
+}
+
+.money input:focus{
+    background: rgb(255, 255, 255);
+}
+
+.enter{
+    align-items: center;
+    padding-top: 30px;
+    justify-items: center;
+    
+}
+
+.enter button{
+    background: #ffff;
+    color: rgba(0, 0, 0, 0.582);
+    padding: 20px 185px;
+    border-radius: 100px;
+    letter-spacing: 1px;
+    transition: background .5s;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.enter button:hover{
+    background-color: #9aff72f8;
+    cursor: pointer;
 }

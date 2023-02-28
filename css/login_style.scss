@@ -1,14 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
-
-
-*{
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Labrada&display=swap");
 
 body {
-    font-family: 'Gloock', serif;
+    font-family: 'Labrada', serif;
     min-height: 100vh;
-    background: white;
+    background: linear-gradient(to top, #00ffdd ,#00e1ff, #c7fdff ,#83f7ff ,#00fffff1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,62 +11,81 @@ body {
 
 .container{
     width: 450px;
-    background: rgba(255, 255, 255, .5);
-    padding: 4rem;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.699);
+    padding: 3rem;
     border-radius: 10px;
-    position: relative;
+    position: absolute;
+    display: flex;
 }
 
-.login-header{
-    margin-bottom: 3rem;
-    font-size: 30px;
+h4{
+    margin-bottom: 5px;
+    font-size: 50px;
     text-align: center;
     color: #393939;
+    align-items: center;
+    position: absolute;
+    left: 150px;
+    top: 30px;
 }
 
-.login-form-content{
+.info{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
 }
 
-.login-form-content .form-item{
-    display:flex;
+.info .form-control{
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: calc(1rem * .8);
+    justify-content: center;
+    font-size: 24px;
     margin-bottom: 2rem;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"]{
+.info input[type="text"],
+.info input[type="password"]{
     border: none;
     outline: none;
     background: rgba(255, 255, 255, .3);
-    padding: 1rem 1.5rem;
-    padding-left: calc(1rem * 3.5);
+    padding: 20px 250px;
+    padding-left: calc(2rem * 1.5);
     border-radius: 100px;
-    width: 100%;
+    width: 90%;
     transition: background .5s;
 }
 
-.money input:focus{
-    background: white;
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    position: absolute;
+    bottom: 40px;
+    left: 105px;
 }
 
-.login-form button{
-    background: #505050;
-    color: white;
+.login input:focus{
+    background: rgb(173, 173, 173);
+}
+
+.login button{
+    background: #ffff;
+    color: rgba(0, 0, 0, 0.582);
     padding: 1rem;
     border-radius: 100px;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: background .5s;
     text-align: center;
+    font-weight: bold;
 }
 
-.login-form button:hover{
-    background-color: #000000;
+.login button:hover{
+    background-color: #d3fffd38;
     cursor: pointer;
 }
-

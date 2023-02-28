@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/login_style.css">
+        <link rel="stylesheet" href="css/login_style.scss">
         <title>WebBank</title>
         <style>
         body {
@@ -16,8 +16,6 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-sm-8"></div>
                 <div class="col-sm-4">
                     <h4>Sign IN</h4>
                     <form action="" method="post">
@@ -31,7 +29,6 @@
                       </div>
                     </form>
                 </div>
-            </div>
         </div>
 <?php
 // สร้างการเชื่อมต่อฐานข้อมูล
