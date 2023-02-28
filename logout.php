@@ -18,9 +18,9 @@ echo '
 				            title: "Logout สำเร็จ !!",
 				            type: "success"
 				        }, function() {
-				            window.location = "index.php";
+				            window.location = "login.php";
 				        });
-				    }, 1000);
+				    });
 				</script>
 				';
 

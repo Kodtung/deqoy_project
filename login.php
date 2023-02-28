@@ -7,32 +7,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <title>Basic Login PHP, SESSION and condition</title>
+        <link rel="stylesheet" href="css/home_style.css">
+        <title>WebBank</title>
         <style>
         body {
-        background-image: url('https://www.tisco.co.th/content/tisco-bank/en/personal/loan/home-for-cash/_jcr_content/root/responsivegrid/core_columnctrl/col_0/image_2027699417_cop.img.png/1596423765674.png');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
         }
         </style>
     </head>
     <body>
-        <div class="container" style="margin-top: 150px;">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-8"></div>
                 <div class="col-sm-4">
-                    <h4>เข้าสู่ระบบผู้ใช้</h4>
+                    <h4>Sign IN</h4>
                     <form action="" method="post">
-                        username
+                      <div class="info">
                         <input type="text" id="username" name="username" class="form-control" required placeholder="username">
-                        
-                        password
                         <input type="password" id="password" name="password" class="form-control" required placeholder="password">
-                        <br>
+                      </div>
+                      <div class="login">
                         <button type="submit" name="login">Login</button>
-                        <br>
                         <button type="submit" name="register">Register</button>
+                      </div>
                     </form>
                 </div>
             </div>
@@ -51,7 +47,7 @@ if (isset($_POST['login'])) {
   if (mysqli_num_rows($result) == 1) {
     session_start();
     $_SESSION['id'] = $row['id'];
-    header("Location: dashboard.php");
+    header("Location: home.php");
   } else {
     echo "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
   }
