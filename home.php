@@ -36,45 +36,57 @@ if (isset($_POST['show'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/home_style.css">
+  <link rel="stylesheet" href="css/home_style.scss">
   <title>WebBank</title>
 </head>
 <body>
-<h1>Welcome! , <?php echo $user['username']; ?></h1>
-<p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-
-<div class="form">
-  <form action="withdraw.php">
-    <div class="withdraw">
-      <button type="submit">
-        <img src="img/cash-withdrawal.png" alt="withdraw">
-      </button>
-    <label for="">Withdraw</label>
+<div class="container">
+  <div class="icon-info">
+    <div class="user-info">
+      <div class="user-icon">
+        <img src="img/profile.png" alt="user">    
+      </div>
+      <div class="logout">
+        <a href="logout.php" onclick="return confirm('Are you confirm to logout?');"> <img src="img/logout.png" alt="logout" width="50px"></a>
+      </div>
+      <div class="name" href="login.php">
+        <h1>Welcome! , <?php echo $user['username']; ?></h1>
+      </div>
+      <div class="info">
+        <label for="">Welcome to my WebBanking!</label>
+        <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>                     
+      </div>
+      <div class="form">
+        <form action="withdraw.php">
+          <div class="withdraw">
+            <button type="submit">
+              <img src="img/cash-withdrawal.png" alt="withdraw" width="200px">
+            </button>
+            <label for="">Withdraw</label>
+          </div>
+        </form>
+        <form action="deposit.php">
+          <div class="deposit">
+            <button type="submit">
+              <img src="img/deposit.png" alt="deposit" width="200px">
+            </button>
+            <label for="">Deposit</label>
+          </div>
+        </form>
+        <form action="check_statement.php">
+          <div class="statement">                    
+            <button type="submit">
+              <img src="img/income.png" alt="statement" width="200px">
+            </button>
+            <label for="">Check Statement</label>
+          </div>
+        </form>
+      </div>
     </div>
-  </form>
-  <form action="deposit.php">
-    <div class="deposit">
-      <button type="submit">
-        <img src="img/deposit.png" alt="deposit">
-      </button>
-      <label for="">Deposit</label>
-    </div>
-  </form>
-  <form action="check_statement.php">
-    <div class="statement">                    
-      <button type="submit">
-        <img src="img/income.png" alt="statement">
-      </button>
-      <label for="">Check Statement</label>
-    </div>
-  </form>
+  </div>
 </div>
+</div>
+
 
 </body>
 </html>
-
-
-
-<!doctype html>
-<html lang="en">
-    <a href="logout.php" onclick="return confirm('Are you confirm to logout?');"> <img src="img/logout.png" alt=""></a>

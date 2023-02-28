@@ -41,10 +41,12 @@ if (isset($_POST['show'])) {
 }
 
 ?>
-
-<h1>Welcome! , <?php echo $user['username']; ?></h1>
+<body>
+  <div class="container">
+  <h1>Welcome! , <?php echo $user['username']; ?></h1>
 <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-<a href="home.php"> <img src="img/logout.png" alt=""></a>
+<a href="home.php"> <img src="img/logout.png" alt="" width="50px" height="50px"></a>
+<link rel="stylesheet" href="css/withdraw_style.scss">
 
 <h2>Withdraw</h2>
 <form method="post">
@@ -56,3 +58,6 @@ if (isset($_POST['show'])) {
     <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
   </div>
 </form>
+  </div>
+</body>
+
